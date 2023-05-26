@@ -1,5 +1,5 @@
 # n8n on Fly.io
-This repository contains a Dockerfile and a fly.toml configuration file to deploy an n8n server on Fly.io.
+This repository contains a Dockerfile and a fly.toml configuration file to deploy an [n8n](https://github.com/n8n-io) server on [Fly.io](https://fly.io).
 
 ## Prerequisites
 - [Fly.io account](https://fly.io/)  

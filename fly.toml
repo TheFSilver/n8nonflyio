@@ -1,0 +1,42 @@
+# fly.toml app configuration file generated for iloven8n on 2023-05-25T18:21:54+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "iloven8n"
+primary_region = "cdg"
+
+[http_service]
+  internal_port = 5678
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 200
+    hard_limit = 250
+
+[env]
+  DATABASE_URL = $DATABASE_URL
+  DB_POSTGRESDB_DATABASE = $POSTGRESDB_DATABASE
+  DB_POSTGRESDB_HOST = $POSTGRESDB_HOST
+  DB_POSTGRESDB_PASSWORD = $POSTGRESDB_PASSWORD
+  DB_POSTGRESDB_PORT = "5432"
+  DB_POSTGRESDB_USER = "postgres"
+  DB_TYPE = "postgresdb"
+  GENERIC_TIMEZONE = "Europe/Paris"
+  N8N_BASIC_AUTH_ACTIVE = "false"
+  N8N_LOG_LEVEL= "debug"
+  N8N_DIAGNOSTICS_ENABLED = "true"
+  N8N_ENCRYPTION_KEY = $N8N_ENCRYPTION_KEY
+  N8N_HIRING_BANNER_ENABLED = "true"
+  N8N_HOST = $N8N_HOST
+  N8N_USER_MANAGEMENT_DISABLED = "false"
+  TINI_SUBREAPER = "true"
+  TZ = "Europe/Paris"
+  WEBHOOK_TUNNEL_URL = $WEBHOOK_TUNNEL_URL
+  WEBHOOK_URL = $WEBHOOK_URL
+
+[[mounts]]
+  source = $DB_SOURCE
+  destination = "/home/node/.n8n"

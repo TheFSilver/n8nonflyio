@@ -61,33 +61,13 @@ Connection string: postgres://postgres:owliSiATKsIszoF@iloven8n-db.flycast:5432
 ```
 Keep a note of the summary you'll receive as this will be used at step 10.
 
-
 ### Step 7: Skip Upstash Redis Database Setup
 When asked if you'd like to set up an Upstash Redis database, select N and press Enter.
 
 ### Step 8: Skip Immediate Deployment
 You will then be asked if you'd like to deploy now. Select N and press Enter.
 
-### Step 9: Update the fly.toml file
-Go to your [Fly.io Dashboard](https://fly.io/dashboard/)  
-Click on the app which name starts by the app name you chose and ends by *-db*.  
-Go to the Volumes section on the left menu.  
-Copy the value located under the id column of the Volumes table. It usually starts with "vol_".  
-
-Open the fly.toml file and replace the mounts source value by the one you just copied.  
-
-Example:  
-```
-[[mounts]]
-  source = "vol_" # Value to replace
-```
-Gets replaced by:
-```
-[[mounts]]
-  source = "vol_kgj5450ynn9ry2wz"
-``` 
-
-### Step 10: Set Up Secrets
+### Step 9: Set Up Secrets
 Set up your secrets using the `flyctl secrets set` command.  
 You will need to replace each placeholders with your specific information in the following command:
 ```
@@ -97,16 +77,21 @@ flyctl secrets set \
   DB_POSTGRESDB_PASSWORD="owliSiATKsIszoF" \
   N8N_ENCRYPTION_KEY="SomeRandomAndSecureEncryptionKeyOfYourChoice" \
   N8N_HOST="iloven8n.fly.dev" \
-  WEBHOOK_TUNNEL_URL="https://iloven8n.fly.dev" \
   WEBHOOK_URL="https://iloven8n.fly.dev"
 ```
+DB_POSTGRESDB_DATABASE is your app name.  
+DB_POSTGRESDB_HOST is your Database Hostname from step 6.  
+DB_POSTGRESDB_PASSWORD is your Database Password from step 6.  
+N8N_ENCRYPTION_KEY is up to you. ;)  
+N8N_HOST is your app Hostname from step 5.  
+WEBHOOK_URL is your app Hostname from step 5 preceded by "https://".  
 
-### Step 11: Deploy Application
+### Step 10: Deploy Application
 Finally, deploy your application by running the following command:
 ```
 flyctl deploy
 ```
 
-Now wait for the installation to complete, then navigate to your *N8N_HOST* URL to set your email and password.
+Now wait for the installation to complete, then navigate to your *N8N_HOST* URL to set up the owner account.
 
 Congrats and welcome on N8N!

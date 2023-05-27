@@ -30,7 +30,7 @@ Upon launch, you'll be prompted to copy the configuration to the new app, select
 Then, choose your desired app name and press Enter.  
 Default app name is *ìloven8n*.
 
-### Step 5: Choose your server region N8N_HOST Variable
+### Step 5: Choose your server region
 After selecting an app name, you'll be asked to choose a region for deployment.  
 Use the Up & Down arrows to select a region and press Enter.  
 

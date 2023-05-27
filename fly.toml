@@ -16,26 +16,16 @@ app = "iloven8n"
     hard_limit = 250
 
 [env]
-  DATABASE_URL = "postgres://iloven8n:4RZXzhZ9jaHGS5m@iloven8n-db.flycast:5432/iloven8n?sslmode=disable"
-  DB_POSTGRESDB_DATABASE = "iloven8n"
-  DB_POSTGRESDB_HOST = "iloven8n-db.internal"
-  DB_POSTGRESDB_PASSWORD = "owliSiATKsIszoF"
   DB_POSTGRESDB_PORT = "5432"
   DB_POSTGRESDB_USER = "postgres"
   DB_TYPE = "postgresdb"
-  GENERIC_TIMEZONE = "Europe/Paris"
+  GENERIC_TIMEZONE = "Europe/Paris" # Change the Timezone here and on the next line
+  TZ = "Europe/Paris"
   N8N_BASIC_AUTH_ACTIVE = "false"
   N8N_LOG_LEVEL= "debug"
   N8N_DIAGNOSTICS_ENABLED = "true"
   N8N_ENCRYPTION_KEY = "SomeRandomAndSecureEncryptionKeyOfYourChoice"
   N8N_HIRING_BANNER_ENABLED = "true"
-  N8N_HOST = "iloven8n.fly.dev"
   N8N_USER_MANAGEMENT_DISABLED = "false"
   TINI_SUBREAPER = "true"
-  TZ = "Europe/Paris"
-  WEBHOOK_TUNNEL_URL = "https://iloven8n.fly.dev"
-  WEBHOOK_URL = "https://iloven8n.fly.dev"
 
-[[mounts]]
-  source = "vol_" # Value to replace
-  destination = "/home/node/.n8n"

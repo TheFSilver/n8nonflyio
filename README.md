@@ -79,12 +79,12 @@ flyctl secrets set \
   N8N_HOST="iloven8n.fly.dev" \
   WEBHOOK_URL="https://iloven8n.fly.dev"
 ```
-DB_POSTGRESDB_DATABASE is your app name.  
-DB_POSTGRESDB_HOST is your Database Hostname from step 6.  
-DB_POSTGRESDB_PASSWORD is your Database Password from step 6.  
-N8N_ENCRYPTION_KEY is up to you. ;)  
-N8N_HOST is your app Hostname from step 5.  
-WEBHOOK_URL is your app Hostname from step 5 preceded by "https://".  
+*DB_POSTGRESDB_DATABASE* is your app name.  
+*DB_POSTGRESDB_HOST* is your Database Hostname from step 6.  
+*DB_POSTGRESDB_PASSWORD* is your Database Password from step 6.  
+*N8N_ENCRYPTION_KEY* is up to you. ;)  
+*N8N_HOST* is your app Hostname from step 5.  
+*WEBHOOK_URL* is your app Hostname from step 5 preceded by "https://".  
 
 ### Step 10: Deploy Application
 Finally, deploy your application by running the following command:

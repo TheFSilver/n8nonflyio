@@ -92,6 +92,12 @@ Finally, deploy your application by running the following command:
 flyctl deploy
 ```
 
-Now wait for the installation to complete, then navigate to your *N8N_HOST* URL to set up the owner account.
+### Step 11: Add 2GB of RAM to your server
+Once the installation is complete, I highly recommend you to scale the VM memory to 2GB of RAM to avoid n8n crashing due to lack of memory:  
+```
+fly scale memory 2048
+```
+Your server will be updated accordingly.  
+Then navigate to your *N8N_HOST* URL to set up the owner account.
 
 Congrats and welcome on N8N!

@@ -17,10 +17,10 @@ primary_region = "cdg"
     hard_limit = 250
 
 [env]
-  DATABASE_URL = $DATABASE_URL
-  DB_POSTGRESDB_DATABASE = $POSTGRESDB_DATABASE
-  DB_POSTGRESDB_HOST = $POSTGRESDB_HOST
-  DB_POSTGRESDB_PASSWORD = $POSTGRESDB_PASSWORD
+  DATABASE_URL = "postgres://iloven8n:4RZXzhZ9jaHGS5m@iloven8n-db.flycast:5432/iloven8n?sslmode=disable"
+  DB_POSTGRESDB_DATABASE = "iloven8n"
+  DB_POSTGRESDB_HOST = "iloven8n-db.internal"
+  DB_POSTGRESDB_PASSWORD = "owliSiATKsIszoF"
   DB_POSTGRESDB_PORT = "5432"
   DB_POSTGRESDB_USER = "postgres"
   DB_TYPE = "postgresdb"
@@ -28,15 +28,15 @@ primary_region = "cdg"
   N8N_BASIC_AUTH_ACTIVE = "false"
   N8N_LOG_LEVEL= "debug"
   N8N_DIAGNOSTICS_ENABLED = "true"
-  N8N_ENCRYPTION_KEY = $N8N_ENCRYPTION_KEY
+  N8N_ENCRYPTION_KEY = "SomeRandomAndSecureEncryptionKeyOfYourChoice"
   N8N_HIRING_BANNER_ENABLED = "true"
-  N8N_HOST = $N8N_HOST
+  N8N_HOST = "iloven8n.fly.dev"
   N8N_USER_MANAGEMENT_DISABLED = "false"
   TINI_SUBREAPER = "true"
   TZ = "Europe/Paris"
-  WEBHOOK_TUNNEL_URL = $WEBHOOK_TUNNEL_URL
-  WEBHOOK_URL = $WEBHOOK_URL
+  WEBHOOK_TUNNEL_URL = "https://iloven8n.fly.dev"
+  WEBHOOK_URL = "https://iloven8n.fly.dev"
 
 [[mounts]]
-  source = $DB_SOURCE
+  source = "vol_"
   destination = "/home/node/.n8n"

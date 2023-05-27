@@ -4,7 +4,6 @@
 #
 
 app = "iloven8n"
-primary_region = "cdg"
 
 [http_service]
   internal_port = 5678
@@ -38,5 +37,5 @@ primary_region = "cdg"
   WEBHOOK_URL = "https://iloven8n.fly.dev"
 
 [[mounts]]
-  source = "vol_"
+  source = "vol_" # Value to replace
   destination = "/home/node/.n8n"

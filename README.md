@@ -43,6 +43,8 @@ Hostname: iloven8n.fly.dev
 When asked if you'd like to set up a Postgresql database, select Y, press Enter and choose the following option:  
 ```Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk.```  
 
+When asked if you'd like to scale single node pg to zero after one hour, select N and press Enter.  
+
 You should see a summary similar to this:
 ```
 Postgres cluster iloven8n-db created

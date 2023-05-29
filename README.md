@@ -86,13 +86,28 @@ flyctl secrets set \
 *N8N_HOST* is your app Hostname from step 5.  
 *WEBHOOK_URL* is your app Hostname from step 5 preceded by "https://".  
 
-### Step 10: Deploy Application
+### Step 10: Update the fly.toml file
+Go to your [Fly.io Dashboard](https://fly.io/dashboard/)  
+Click on the app which name starts by the app name you chose and ends by *-db*.  
+Go to the Volumes section on the left menu.  
+Copy the value located under the id column of the Volumes table. It usually starts with "vol_".  
+
+Open the fly.toml file, paste the below code at the end of the file and replace the mounts source value by the one you just copied.  
+
+Example:  
+```
+[[mounts]]
+  source = "vol_..." # Replace vol_... by your database volumn id
+  destination = "/home/node/.n8n"
+```
+
+### Step 11: Deploy Application
 Finally, deploy your application by running the following command:
 ```
 flyctl deploy
 ```
 
-### Step 11: Add 2GB of RAM to your server
+### Step 12: Add 2GB of RAM to your server
 Once the installation is complete, I highly recommend you to scale the VM memory to 2GB of RAM to avoid n8n crashing due to lack of memory:  
 ```
 fly scale memory 2048

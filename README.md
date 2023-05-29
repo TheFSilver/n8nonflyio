@@ -84,20 +84,20 @@ flyctl secrets set \
 *DB_POSTGRESDB_PASSWORD* is your Database Password from step 6.  
 *N8N_ENCRYPTION_KEY* is up to you. ;)  
 *N8N_HOST* is your app Hostname from step 5.  
-*WEBHOOK_URL* is your app Hostname from step 5 preceded by "https://".  
+*WEBHOOK_URL* is your app Hostname from step 5 preceded by "*https://*".  
 
 ### Step 10: Update the fly.toml file
 Go to your [Fly.io Dashboard](https://fly.io/dashboard/)  
-Click on the app which name starts by the app name you chose and ends by *-db*.  
+Click on the app which name starts by the app name you chose and ends by "*-db*".  
 Go to the Volumes section on the left menu.  
-Copy the value located under the id column of the Volumes table. It usually starts with "vol_".  
+Copy the value located under the id column of the Volumes table. It usually starts with "*vol_*".  
 
 Open the fly.toml file, paste the below code at the end of the file and replace the mounts source value by the one you just copied.  
 
 Example:  
 ```
-[[mounts]]
-  source = "vol_..." # Replace vol_... by your database volumn id
+[mounts]
+  source = "vol_id" # Replace vol_id by your database volumn id
   destination = "/home/node/.n8n"
 ```
 
